@@ -15,6 +15,7 @@ import com.example.irongym.entity.NotificacionesResponse
 import com.example.irongym.entity.ObtenerMensajesResponse
 import com.example.irongym.entity.PerfilUsuario
 import com.example.irongym.entity.RutinaResponse
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -87,5 +88,9 @@ interface ApiService {
 
     @DELETE("/api/mensajes/borrar/")
     fun borrarMensajes(): Call<Map<String, Any>>
+
+    @GET("api/v1/product/{code}.json")
+    fun getProducto(@Path("code") codigo: String): Call<ResponseBody>
+
 
 }

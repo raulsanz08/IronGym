@@ -1,14 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".App"
@@ -22,51 +18,34 @@
         android:theme="@style/Theme.IronGym"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+
+        <!-- ZXing Activity -->
         <activity
-            android:name=".WelcomeActivity"
-            android:exported="true">
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="fullSensor"
+            android:theme="@style/zxing_CaptureTheme"
+            tools:replace="android:screenOrientation" />
+
+        <activity android:name=".WelcomeActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetalleRutinaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetalleDietaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetalleEjercicioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".DetalleDiaDietaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PerfilActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadisticasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NotificacionesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ModoDesafioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ConfiguracionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChatActivity"
-            android:exported="false" />
+
+        <!-- Tus demás activities... -->
+        <activity android:name=".LoginActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="false" />
+        <activity android:name=".DetalleRutinaActivity" android:exported="false" />
+        <activity android:name=".DetalleDietaActivity" android:exported="false" />
+        <activity android:name=".DetalleEjercicioActivity" android:exported="false" />
+        <activity android:name=".DetalleDiaDietaActivity" android:exported="false" />
+        <activity android:name=".PerfilActivity" android:exported="false" />
+        <activity android:name=".EstadisticasActivity" android:exported="false" />
+        <activity android:name=".NotificacionesActivity" android:exported="false" />
+        <activity android:name=".ModoDesafioActivity" android:exported="false" />
+        <activity android:name=".ConfiguracionActivity" android:exported="false" />
+        <activity android:name=".ChatActivity" android:exported="false" />
     </application>
 
 </manifest>

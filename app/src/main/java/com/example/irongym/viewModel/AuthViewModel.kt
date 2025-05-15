@@ -53,7 +53,7 @@ class AuthViewModel : ViewModel() {
                         // Almacenar el token en SharedPreferences
                         val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
-                        editor.putString("TOKEN", body.token)
+                        editor.putString("token", body.token)
                         editor.putInt("usuario_id", body.usuario_id ?: -1)
                         editor.apply()
 

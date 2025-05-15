@@ -10,6 +10,7 @@ object RetrofitInstance {
     private const val BASE_URL = "http://192.168.1.147:8000/"
     private lateinit var retrofit: Retrofit
 
+
     fun initialize(context: Context) {
         val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         val token = sharedPreferences.getString("token", null)
@@ -28,8 +29,12 @@ object RetrofitInstance {
     }
 
     val api: ApiService by lazy {
+        if (!::retrofit.isInitialized) {
+            throw IllegalStateException("RetrofitInstance not initialized. Call initialize(context) first.")
+        }
         retrofit.create(ApiService::class.java)
     }
+
 }
 
 
