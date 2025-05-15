@@ -31,12 +31,12 @@ class ConfiguracionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // 🔥 Antes de cargar la vista, aplicamos el idioma guardado
+
         aplicarIdiomaGuardado()
 
         setContentView(R.layout.activity_configuracion)
 
-        // Inicializar las vistas
+
         etEmail = findViewById(R.id.etNombreUsuario)
         etContrasena = findViewById(R.id.etContrasena)
         checkNotificaciones = findViewById(R.id.checkboxNotificaciones)
@@ -45,18 +45,18 @@ class ConfiguracionActivity : AppCompatActivity() {
         btnCerrarSesion = findViewById(R.id.btnCerrarSesion)
         btnBack = findViewById(R.id.btnBack)
 
-        // Configurar el Spinner con los idiomas
+
         val idiomas = arrayOf("Español", "Inglés")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, idiomas)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerIdioma.adapter = adapter
 
-        // Botón para volver a la actividad anterior
+
         btnBack.setOnClickListener {
             finish()
         }
 
-        // Botón "Guardar cambios"
+
         btnGuardar.setOnClickListener {
             val email = etEmail.text.toString()
             val contrasena = etContrasena.text.toString()
@@ -66,12 +66,12 @@ class ConfiguracionActivity : AppCompatActivity() {
             val sharedPreferences: SharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE)
             val idiomaGuardado = sharedPreferences.getString("LANGUAGE", "Español") ?: "Español"
 
-            // Solo cambiamos el idioma si es diferente
+
             if (idioma != idiomaGuardado) {
                 cambiarIdioma(idioma)
             }
 
-            // Crear objeto configuración
+
             val configuracion = ConfiguracionRequest(
                 email = if (email.isNotEmpty()) email else "",
                 contrasena = if (contrasena.isNotEmpty()) contrasena else "",
@@ -82,7 +82,7 @@ class ConfiguracionActivity : AppCompatActivity() {
             actualizarConfiguracion(configuracion)
         }
 
-        // Botón "Cerrar sesión"
+
         btnCerrarSesion.setOnClickListener {
             cerrarSesion()
         }
@@ -100,20 +100,20 @@ class ConfiguracionActivity : AppCompatActivity() {
         config.setLocale(locale)
         resources.updateConfiguration(config, resources.displayMetrics)
 
-        // Guardar el idioma en SharedPreferences
+
         val sharedPreferences: SharedPreferences = getSharedPreferences("Settings", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
         editor.putString("LANGUAGE", idioma)
         editor.apply()
 
-        // Mostrar Toast informativo
+
         Toast.makeText(
             this,
             if (idioma == "Español") "Idioma cambiado a Español" else "Language changed to English",
             Toast.LENGTH_SHORT
         ).show()
 
-        // 🔥 Reiniciar toda la app (no solo esta Activity)
+
         val intent = Intent(this, WelcomeActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
@@ -177,7 +177,7 @@ class ConfiguracionActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         sharedPreferences.edit().clear().apply()
 
-        // Redirigir al login
+
         val intent = Intent(this, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)

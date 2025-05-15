@@ -15,7 +15,7 @@ import com.example.irongym.entity.Rutina
 class RutinaAdapter(private var listaRutinas: List<Rutina>) :
     RecyclerView.Adapter<RutinaAdapter.RutinaViewHolder>() {
 
-    private var allRutinas: List<Rutina> = listaRutinas.toList()  // 🔥 Copia completa para filtrar
+    private var allRutinas: List<Rutina> = listaRutinas.toList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RutinaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_rutina, parent, false)
@@ -46,11 +46,11 @@ class RutinaAdapter(private var listaRutinas: List<Rutina>) :
 
     fun updateData(newListaRutinas: List<Rutina>) {
         listaRutinas = newListaRutinas
-        allRutinas = newListaRutinas.toList() // 🔥 También actualizar la lista completa
+        allRutinas = newListaRutinas.toList()
         notifyDataSetChanged()
     }
 
-    // 🔥 NUEVA FUNCION para filtrar rutinas
+
     fun filter(query: String) {
         listaRutinas = if (query.isEmpty()) {
             allRutinas

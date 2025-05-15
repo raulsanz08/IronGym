@@ -15,7 +15,7 @@ import com.example.irongym.entity.Dieta
 class DietaAdapter(private var listaDietas: List<Dieta>) :
     RecyclerView.Adapter<DietaAdapter.DietaViewHolder>() {
 
-    private var allDietas: List<Dieta> = listaDietas.toList() // 🔥 Copia de todas las dietas
+    private var allDietas: List<Dieta> = listaDietas.toList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DietaViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_dieta, parent, false)
@@ -42,14 +42,14 @@ class DietaAdapter(private var listaDietas: List<Dieta>) :
 
     override fun getItemCount(): Int = listaDietas.size
 
-    // 🔥 Método para actualizar datos
+
     fun updateData(newListaDietas: List<Dieta>) {
         listaDietas = newListaDietas
-        allDietas = newListaDietas.toList() // 🔥 También actualizamos la copia completa
+        allDietas = newListaDietas.toList()
         notifyDataSetChanged()
     }
 
-    // 🔥 NUEVO: Método para filtrar dietas por nombre
+
     fun filter(query: String) {
         listaDietas = if (query.isEmpty()) {
             allDietas

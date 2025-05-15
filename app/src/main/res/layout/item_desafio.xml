@@ -13,7 +13,7 @@
         android:padding="12dp"
         android:gravity="center_vertical">
 
-        <!-- Imagen circular del desafío -->
+
         <ImageView
             android:id="@+id/ivDesafioImagen"
             android:layout_width="60dp"
@@ -22,7 +22,7 @@
             android:layout_marginEnd="12dp"
             android:background="@drawable/circle_background" />
 
-        <!-- Título y descripción del desafío -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
                 android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 
-        <!-- CheckBox de completado -->
+
         <CheckBox
             android:id="@+id/checkCompletado"
             android:layout_width="wrap_content"

@@ -7,38 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
-    <!-- RecyclerView para mostrar los mensajes -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvChat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="@dimen/margin_bottom_large"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/btnClearChat" />
 
-    <!-- Botón para borrar conversación -->
     <Button
         android:id="@+id/btnClearChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Borrar Conversación"
-        android:backgroundTint="@color/design_default_color_error"
+        android:text="@string/borrar_conversacion"
+        android:backgroundTint="@color/red_error"
         android:textColor="@android:color/white"
+        android:layout_margin="@dimen/margin_small"
         app:layout_constraintTop_toBottomOf="@id/rvChat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/layoutSendMessage"
-        android:layout_margin="8dp" />
+        app:layout_constraintBottom_toTopOf="@id/layoutSendMessage" />
 
-    <!-- Layout para escribir y enviar mensajes -->
     <LinearLayout
         android:id="@+id/layoutSendMessage"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/input_bar_height"
         android:orientation="horizontal"
-        android:padding="10dp"
+        android:padding="@dimen/padding_medium"
         android:background="?android:attr/windowBackground"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -49,19 +46,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="Escribe un mensaje"
+            android:hint="@string/escribe_mensaje"
             android:background="@android:drawable/edit_text"
-            android:padding="10dp"
-            android:textColor="#000"
-            android:textSize="16sp" />
+            android:padding="@dimen/padding_small"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_medium" />
 
         <ImageButton
             android:id="@+id/btnSend"
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="@dimen/send_button_size"
+            android:layout_height="@dimen/send_button_size"
+            android:layout_marginStart="@dimen/margin_small"
             android:background="@drawable/ic_return"
-            android:contentDescription="Enviar mensaje"
+            android:contentDescription="@string/enviar_mensaje"
             android:layout_gravity="center_vertical" />
     </LinearLayout>
 

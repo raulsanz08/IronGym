@@ -6,55 +6,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/red_claro"
-    tools:context=".DiaRutinaActivity">
+    tools:context=".DetalleEjercicioActivity">
 
-    <!-- 🔺 Título superior -->
     <TextView
         android:id="@+id/tvTituloDia"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/dia_pecho_hombro_triceps"
         android:textColor="@android:color/white"
-        android:textSize="18sp"
+        android:textSize="@dimen/text_titulo"
         android:textStyle="bold"
         android:gravity="center"
         android:background="@color/red_oscuro"
-        android:padding="16dp"
+        android:padding="@dimen/padding_general"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- 🖼 Imagen principal -->
     <ImageView
         android:id="@+id/ivDia"
         android:layout_width="0dp"
-        android:layout_height="180dp"
+        android:layout_height="@dimen/altura_imagen_dieta"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintTop_toBottomOf="@id/tvTituloDia"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- 🔙 Botón de volver dentro de la imagen -->
     <ImageButton
         android:id="@+id/btnBackEjercicio"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="12dp"
+        android:layout_width="@dimen/boton_icono"
+        android:layout_height="@dimen/boton_icono"
+        android:layout_margin="@dimen/margen_boton"
         android:background="@drawable/rounded_white_background"
         android:src="@drawable/ic_return"
         android:contentDescription="@string/volver"
         app:layout_constraintTop_toTopOf="@id/ivDia"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- 📋 Contenedor de ejercicios -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEjercicios"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
+        android:layout_margin="@dimen/margen_general"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
         app:layout_constraintTop_toBottomOf="@id/ivDia"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="@dimen/padding_card">
 
             <TextView
                 android:id="@+id/tvSubtitulo"
@@ -73,8 +69,8 @@
                 android:text="@string/entrenamiento_completo"
                 android:textStyle="bold"
                 android:textColor="@color/red_oscuro"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp" />
+                android:textSize="@dimen/text_subtitulo"
+                android:layout_marginBottom="@dimen/margen_inferior_subtitulo" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvEjercicios"

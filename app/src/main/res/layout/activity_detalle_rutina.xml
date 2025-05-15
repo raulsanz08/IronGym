@@ -7,39 +7,36 @@
     android:layout_height="match_parent"
     tools:context=".DetalleRutinaActivity">
 
-    <!-- Imagen de fondo -->
     <ImageView
         android:id="@+id/ivFondoRutina"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="@dimen/altura_fondo_dieta"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botón de volver -->
     <ImageButton
         android:id="@+id/btnBack"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="16dp"
+        android:layout_width="@dimen/boton_icono"
+        android:layout_height="@dimen/boton_icono"
+        android:layout_margin="@dimen/margen_general"
         android:background="@drawable/rounded_white_background"
         android:src="@drawable/ic_return"
         android:contentDescription="@string/volver"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Contenedor blanco con los días -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardDias"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="-30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
+        android:layout_marginTop="@dimen/margen_negativo_card"
+        android:layout_marginStart="@dimen/margen_general"
+        android:layout_marginEnd="@dimen/margen_general"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
         app:layout_constraintTop_toBottomOf="@id/ivFondoRutina"
         app:layout_constraintBottom_toTopOf="@id/btnGuardar"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,18 +46,17 @@
             android:id="@+id/rvDiasEntrenamiento"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
+            android:padding="@dimen/padding_card"
             tools:listitem="@layout/item_dia_entrenamiento" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Botón Guardar datos -->
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/guardar_datos"
         android:textAllCaps="false"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/margen_general"
         android:backgroundTint="@color/red_oscuro"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"

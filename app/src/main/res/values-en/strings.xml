@@ -71,6 +71,9 @@
     <string name="plan_entrenamiento">Training Plan</string>
     <string name="asesoramiento_entrenamiento">Personalized training advice</string>
     <string name="busqueda_fallida">No results found</string>
+    <string name="borrar_conversacion">Delete conversation</string>
+    <string name="escribe_mensaje">Write a message</string>
+    <string name="enviar_mensaje">Send message</string>
 
     <string-array name="idiomas_array">
         <item>Spanish</item>

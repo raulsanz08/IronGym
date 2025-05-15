@@ -20,7 +20,7 @@ class AuthViewModel : ViewModel() {
     fun registerUser(email: String, password: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val requestBody = hashMapOf("email" to email, "password" to password) // ✅ JSON CORRECTO
+                val requestBody = hashMapOf("email" to email, "password" to password)
                 val response = RetrofitInstance.api.registerUser(requestBody).execute()
 
                 if (response.isSuccessful) {
@@ -35,7 +35,6 @@ class AuthViewModel : ViewModel() {
         }
     }
 
-    // Añadir Context como parámetro
     fun loginUser(email: String, password: String, context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
@@ -50,7 +49,6 @@ class AuthViewModel : ViewModel() {
                     if (body != null && body.success) {
                         Log.d("AuthViewModel", "Inicio de sesión exitoso con token: ${body.token}")
 
-                        // Almacenar el token en SharedPreferences
                         val sharedPreferences = context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
                         val editor = sharedPreferences.edit()
                         editor.putString("token", body.token)

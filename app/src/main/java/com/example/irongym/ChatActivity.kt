@@ -28,19 +28,19 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inicializar RecyclerView
+
         chatAdapter = ChatAdapter(messages)
         binding.rvChat.layoutManager = LinearLayoutManager(this)
         binding.rvChat.adapter = chatAdapter
 
-        // Cargar mensajes guardados
+
         cargarMensajesGuardados()
 
         binding.btnClearChat.setOnClickListener {
             mostrarDialogoConfirmacion()
         }
 
-        // Botón enviar
+
         binding.btnSend.setOnClickListener {
             val userInput = binding.etMessage.text.toString().trim()
             if (userInput.isNotEmpty()) {
@@ -49,7 +49,7 @@ class ChatActivity : AppCompatActivity() {
             }
         }
 
-        // También al pulsar ENTER en el teclado
+
         binding.etMessage.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEND) {
                 binding.btnSend.performClick()
@@ -63,14 +63,14 @@ class ChatActivity : AppCompatActivity() {
     private fun enviarMensaje(textoUsuario: String) {
         val horaActual = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
 
-        // Mostrar y guardar el mensaje del usuario
+
         val mensajeUsuario = Message(textoUsuario, "Tú", horaActual)
         messages.add(mensajeUsuario)
         chatAdapter.notifyItemInserted(messages.size - 1)
         binding.rvChat.scrollToPosition(messages.size - 1)
         guardarMensajeServidor(textoUsuario, "Tú")
 
-        // Crear petición a Groq
+
         val request = OpenAiRequest(
             model = "llama3-70b-8192",
             messages = listOf(OpenAiRequestMessage(role = "user", content = textoUsuario))
@@ -121,12 +121,12 @@ class ChatActivity : AppCompatActivity() {
         RetrofitInstance.api.obtenerMensajes().enqueue(object : Callback<ObtenerMensajesResponse> {
             override fun onResponse(call: Call<ObtenerMensajesResponse>, response: Response<ObtenerMensajesResponse>) {
                 if (response.isSuccessful && response.body() != null) {
-                    messages.clear() // 💬 Importante limpiar antes
+                    messages.clear()
                     response.body()!!.mensajes.forEach { mensajeData ->
                         val mensaje = Message(
                             text = mensajeData.texto,
                             sender = mensajeData.remitente,
-                            time = mensajeData.fecha.substring(11, 16) // solo HH:mm
+                            time = mensajeData.fecha.substring(11, 16)
                         )
                         messages.add(mensaje)
                     }
@@ -151,9 +151,9 @@ class ChatActivity : AppCompatActivity() {
                     chatAdapter.notifyDataSetChanged()
                     Toast.makeText(this@ChatActivity, "Conversación eliminada", Toast.LENGTH_SHORT).show()
 
-                    // 🚀 Insertar mensaje automático después de borrar
+
                     val mensajeSistema = Message(
-                        text = "No hay mensajes. ¡Empieza una nueva conversación! 📩",
+                        text = "No hay mensajes. ¡Empieza una nueva conversación! ",
                         sender = "IronBot",
                         time = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
                     )
@@ -178,7 +178,7 @@ class ChatActivity : AppCompatActivity() {
         builder.setTitle("Confirmar")
         builder.setMessage("¿Estás seguro de que quieres borrar toda la conversación?")
         builder.setPositiveButton("Sí, borrar") { _, _ ->
-            borrarConversacion() // Llama aquí tu función de borrado real
+            borrarConversacion()
         }
         builder.setNegativeButton("Cancelar", null)
         val dialog = builder.create()

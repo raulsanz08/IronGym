@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".WelcomeActivity">
 
-    <!-- Imagen de fondo (ahora cubre toda la pantalla) -->
+
     <ImageView
         android:id="@+id/ivBackground"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <!-- CardView flotante sobre la imagen -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardContainer"
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:padding="24dp"
             android:background="@color/red_claro">
 
-            <!-- Título -->
+
             <TextView
                 android:id="@+id/tvWelcome"
                 android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <!-- Subtítulo -->
+
             <TextView
                 android:id="@+id/tvSubtitle"
                 android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="4dp"/>
 
-            <!-- Imagen de perfil circular -->
+
             <ImageView
                 android:id="@+id/ivProfile"
                 android:layout_width="60dp"
@@ -74,7 +74,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <!-- Descripción -->
+
             <TextView
                 android:id="@+id/tvDescription"
                 android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="10dp"/>
 
-            <!-- Botón de continuar -->
+
             <Button
                 android:id="@+id/btnContinue"
                 android:layout_width="0dp"

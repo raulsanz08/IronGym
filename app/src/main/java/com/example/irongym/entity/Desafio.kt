@@ -5,6 +5,6 @@ data class Desafio(
     val titulo: String,
     val descripcion: String,
     val imagenUrl: String,
-    var activo: Boolean, // 🔥 El estado del CheckBox
-    var cambiado: Boolean = false // 🔥 NUEVO: Para saber si ha cambiado o no
+    var activo: Boolean,
+    var cambiado: Boolean = false
 )

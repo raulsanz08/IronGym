@@ -8,30 +8,27 @@
     android:background="@color/white"
     tools:context=".DetalleDietaActivity">
 
-    <!-- Imagen de fondo (dieta) -->
     <ImageView
         android:id="@+id/ivFondoDieta"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="@dimen/altura_fondo_dieta"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/fondo_dieta"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:contentDescription="@string/fondo_dieta" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botón de volver -->
     <ImageButton
         android:id="@+id/btnBackDieta"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="16dp"
+        android:layout_width="@dimen/boton_icono"
+        android:layout_height="@dimen/boton_icono"
+        android:layout_margin="@dimen/margen_general"
         android:background="@drawable/rounded_white_background"
         android:src="@drawable/ic_return"
         android:contentDescription="@string/volver"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Botón escanear -->
     <Button
         android:id="@+id/btnEscanear"
         android:layout_width="wrap_content"
@@ -40,22 +37,21 @@
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:backgroundTint="@color/red_oscuro"
-        android:paddingHorizontal="32dp"
-        android:paddingVertical="8dp"
+        android:paddingHorizontal="@dimen/padding_horizontal"
+        android:paddingVertical="@dimen/padding_vertical"
         app:layout_constraintTop_toTopOf="@id/ivFondoDieta"
         app:layout_constraintBottom_toBottomOf="@id/ivFondoDieta"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Card principal con lista -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardComidas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="-30dp"
-        android:layout_marginHorizontal="16dp"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="8dp"
+        android:layout_marginTop="@dimen/margen_negativo_card"
+        android:layout_marginHorizontal="@dimen/margen_general"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/card_elevation"
         app:layout_constraintTop_toBottomOf="@id/ivFondoDieta"
         app:layout_constraintBottom_toTopOf="@id/btnGuardarComidas"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,16 +61,15 @@
             android:id="@+id/rvDiaDieta"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="16dp"
+            android:padding="@dimen/padding_card"
             tools:listitem="@layout/item_dia_dieta" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Botón Guardar datos -->
     <Button
         android:id="@+id/btnGuardarComidas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/margen_general"
         android:text="@string/guardar_datos"
         android:textColor="@android:color/white"
         android:backgroundTint="@color/red_oscuro"

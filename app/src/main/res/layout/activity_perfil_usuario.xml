@@ -8,7 +8,7 @@
     android:background="@color/red_claro"
     tools:context=".PerfilActivity">
 
-    <!-- 🖼 Imagen de fondo del perfil -->
+
     <ImageView
         android:id="@+id/ivFondoPerfil"
         android:layout_width="0dp"
@@ -19,7 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- 🔙 Botón de volver -->
+
     <ImageButton
         android:id="@+id/btnBackPerfil"
         android:layout_width="50dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- 👤 Avatar del usuario -->
+
     <ImageView
         android:id="@+id/ivAvatar"
         android:layout_width="90dp"
@@ -57,7 +57,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginEnd="20dp">
 
-        <!-- 🧍 Nombre -->
+
         <TextView
             android:id="@+id/tvNombreUsuario"
             android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- ⚖️ Peso -->
+
         <TextView
             android:id="@+id/tvPesoUsuario"
             android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
             android:text="@string/peso_usuario"
             android:textColor="@android:color/white" />
 
-        <!-- 📏 Altura -->
+
         <TextView
             android:id="@+id/tvAlturaUsuario"
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
             android:textColor="@android:color/white" />
     </LinearLayout>
 
-    <!-- 📋 CardView con formulario -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardInputs"
         android:layout_width="0dp"

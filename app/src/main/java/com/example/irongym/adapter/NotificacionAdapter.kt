@@ -20,11 +20,11 @@ class NotificacionAdapter(
 
         fun bind(notificacion: Notificacion) {
             descripcion.text = notificacion.descripcion
-            checkBox.setOnCheckedChangeListener(null)  // Evitar eventos antiguos
+            checkBox.setOnCheckedChangeListener(null)
             checkBox.isChecked = notificacion.activo
 
             checkBox.setOnCheckedChangeListener { _, isChecked ->
-                notificacion.activo = isChecked  // 🔥 Actualizar el objeto internamente
+                notificacion.activo = isChecked
                 onCheckedChange?.invoke(notificacion, isChecked)
             }
         }

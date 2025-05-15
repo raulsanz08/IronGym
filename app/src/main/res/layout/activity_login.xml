@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <!-- Imagen de fondo (ocupa toda la pantalla) -->
     <ImageView
         android:id="@+id/ivBackground"
         android:layout_width="match_parent"
@@ -18,7 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <!-- CardView flotante sobre la imagen -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardContainer"
         android:layout_width="match_parent"
@@ -36,7 +34,6 @@
             android:padding="24dp"
             android:background="@color/red_claro">
 
-            <!-- Título -->
             <TextView
                 android:id="@+id/tvLoginTitle"
                 android:layout_width="wrap_content"
@@ -50,7 +47,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <!-- Campo de usuario -->
             <EditText
                 android:id="@+id/etUsername"
                 android:layout_width="0dp"
@@ -66,7 +62,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="16dp"/>
 
-            <!-- Campo de contraseña -->
             <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="0dp"
@@ -83,7 +78,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginTop="12dp"/>
 
-            <!-- Botón de Iniciar Sesión -->
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_width="0dp"
@@ -97,7 +91,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-            <!-- Botón de Registro -->
             <Button
                 android:id="@+id/btnRegister"
                 android:layout_width="0dp"

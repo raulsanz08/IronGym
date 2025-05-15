@@ -25,30 +25,30 @@ class ModoDesafioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_modo_desafio)
 
-        // Configurar RecyclerView
+
         val recyclerView: RecyclerView = findViewById(R.id.rvDesafios)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // 🔥 Inicializar adaptador con callback para cambios en CheckBox
+
         desafioAdapter = DesafioAdapter { desafio, isChecked ->
             desafio.activo = isChecked
         }
         recyclerView.adapter = desafioAdapter
 
-        // Cargar imagen de fondo con Glide
+
         val ivFondoPerfil: ImageView = findViewById(R.id.ivFondoDesafio)
         Glide.with(this@ModoDesafioActivity)
             .load("https://resizer.glanacion.com/resizer/v2/desafios-fitness-estas-propuestas-se-imponen-en-ITEGZ653G5HJXAJEXYEXROV62Q.JPG?auth=d6ce9c0d05b1b1458298eff16164eeea76a4402a64683578d992a14bc98fa7a0&width=1200&quality=70&smart=false&height=710")
             .into(ivFondoPerfil)
 
-        // Obtener desafíos desde la API
+
         obtenerDesafios()
 
-        // Botón para volver atrás
+
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
         btnBack.setOnClickListener { finish() }
 
-        // Botón "Realizar Desafío" guarda cambios
+
         val btnGuardar = findViewById<Button>(R.id.btnGuardar)
         btnGuardar.setOnClickListener {
             actualizarDesafios()
@@ -93,7 +93,7 @@ class ModoDesafioActivity : AppCompatActivity() {
                     override fun onResponse(call: Call<Map<String, Any>>, response: Response<Map<String, Any>>) {
                         if (response.isSuccessful) {
                             Log.d("REALIZAR", "Desafío ${desafio.id} actualizado correctamente")
-                            desafio.cambiado = false  // 🔥 Lo marcamos como ya sincronizado
+                            desafio.cambiado = false
                         } else {
                             Log.e("REALIZAR", "Error actualizando desafío ${desafio.id}")
                         }

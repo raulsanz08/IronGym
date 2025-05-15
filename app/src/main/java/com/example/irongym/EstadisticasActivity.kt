@@ -35,7 +35,7 @@ class EstadisticasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_estadisticas)
 
-        // Inicializar vistas
+
         tvRitmoCardiaco = findViewById(R.id.tvRitmoCardiaco)
         tvTituloEstadisticas = findViewById(R.id.tvTituloEstadisticas)
         ivFondoPerfil = findViewById(R.id.ivBackground)
@@ -48,19 +48,19 @@ class EstadisticasActivity : AppCompatActivity() {
         barraAltura = findViewById(R.id.barraAltura)
         barraResistencia = findViewById(R.id.barraResistencia)
 
-        // Cargar imagen de fondo
+
         Glide.with(this)
             .load("https://uk.gymshark.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F8urtyqugdt2l%2F1oIrMoqckYTE96ekt5ECyT%2F51471e1e09c39541c1564bc164bd9b06%2Fdesktop-how-often-to-go-to-the-gym.jpg&w=3840&q=85")
             .into(ivFondoPerfil)
 
-        // Recuperar token de sesión
+
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         token = sharedPreferences.getString("token", null) ?: ""
 
-        // Volver a pantalla anterior
+
         btnVolver.setOnClickListener { finish() }
 
-        // Obtener datos
+
         cargarEstadisticas()
     }
 
@@ -104,10 +104,10 @@ class EstadisticasActivity : AppCompatActivity() {
         tvRitmoCardiaco.text = "$bpm bpm"
 
         val fuerza = estadisticas.fuerza.coerceIn(0, 100)
-        val peso = (estadisticas.peso / 2.0).coerceIn(0.0, 100.0).toInt() // Máx 200kg
+        val peso = (estadisticas.peso / 2.0).coerceIn(0.0, 100.0).toInt()
         val logros = estadisticas.logros.coerceIn(0, 100)
         val disciplina = estadisticas.disciplina.coerceIn(0, 100)
-        val altura = (estadisticas.altura / 2.5).coerceIn(0.0, 100.0).toInt() // Máx 250cm
+        val altura = (estadisticas.altura / 2.5).coerceIn(0.0, 100.0).toInt()
         val resistencia = estadisticas.resistencia.coerceIn(0, 100)
 
         setBarraAlturaAnimada(barraFuerza, fuerza)
@@ -121,7 +121,7 @@ class EstadisticasActivity : AppCompatActivity() {
     }
 
     private fun setBarraAlturaAnimada(barra: View, valor: Int) {
-        val maxAlturaPx = 200f * resources.displayMetrics.density // máximo 200dp en píxeles
+        val maxAlturaPx = 200f * resources.displayMetrics.density
         val alturaObjetivo = (valor.coerceIn(0, 100) / 100f) * maxAlturaPx
 
         val layoutParams = barra.layoutParams

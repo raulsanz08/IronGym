@@ -7,4 +7,6 @@
     <color name="red_claro">#F06D6D</color>
 
     <color name="red_masclaro">#DCA7A7</color>
+
+    <color name="red_error">#B00020</color>
 </resources>

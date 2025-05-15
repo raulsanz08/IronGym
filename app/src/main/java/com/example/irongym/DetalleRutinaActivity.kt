@@ -31,7 +31,7 @@ class DetalleRutinaActivity : AppCompatActivity() {
         val imagenUrl = intent.getStringExtra("imagenUrl")
         val fondoImageView = findViewById<ImageView>(R.id.ivFondoRutina)
         val btnBack = findViewById<ImageButton>(R.id.btnBack)
-        val btnGuardar = findViewById<Button>(R.id.btnGuardar) // Asegúrate de tener el botón guardar en tu XML
+        val btnGuardar = findViewById<Button>(R.id.btnGuardar)
 
         btnBack.setOnClickListener {
             finish()
@@ -63,7 +63,6 @@ class DetalleRutinaActivity : AppCompatActivity() {
                     adapter = DiaEntrenamientoAdapter(dias)
                     rvDias.adapter = adapter
 
-                    // Cargar estados si existen
                     val sharedPreferences = getSharedPreferences("DiasPrefs", MODE_PRIVATE)
                     val estadosGuardados = mutableMapOf<Int, Boolean>()
                     dias.forEach {

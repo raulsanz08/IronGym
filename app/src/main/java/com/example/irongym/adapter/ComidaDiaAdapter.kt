@@ -22,7 +22,6 @@ class ComidaDiaAdapter(private val listaComidas: List<ComidaDia>) :
         holder.tvNombre.text = comida.nombre
         holder.tvDescripcion.text = comida.descripcion
 
-        // Agrega esto para depurar
         Log.d("ComidaDiaAdapter", "Comida: ${comida.nombre} - ${comida.descripcion}")
     }
 

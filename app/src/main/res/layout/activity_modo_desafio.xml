@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ModoDesafioActivity">
 
-    <!-- 🔴 Barra superior roja -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -16,7 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Título centrado de la pantalla -->
         <TextView
             android:id="@+id/tvTituloModoDesafio"
             android:layout_width="wrap_content"
@@ -30,7 +28,7 @@
             android:layout_marginTop="16dp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Imagen de fondo -->
+
     <ImageView
         android:id="@+id/ivFondoDesafio"
         android:layout_width="match_parent"
@@ -41,7 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Botón de retroceso -->
+
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="50dp"
@@ -54,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Contenedor de desafíos -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardDesafio"
         android:layout_width="0dp"
@@ -77,7 +75,7 @@
             tools:listitem="@layout/item_desafio" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Botón Realizar desafío -->
+
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="0dp"

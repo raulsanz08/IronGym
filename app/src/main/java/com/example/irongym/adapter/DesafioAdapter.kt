@@ -14,7 +14,7 @@ import com.example.irongym.R
 import com.example.irongym.entity.Desafio
 
 class DesafioAdapter(
-    private val onCheckedChange: ((Desafio, Boolean) -> Unit)? = null  // 🔥 Añadido callback opcional
+    private val onCheckedChange: ((Desafio, Boolean) -> Unit)? = null
 ) : ListAdapter<Desafio, DesafioAdapter.DesafioViewHolder>(DesafioDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DesafioViewHolder {
@@ -48,12 +48,12 @@ class DesafioAdapter(
                 ivDesafioImagen.setImageResource(R.drawable.ic_launcher_foreground)
             }
 
-            // 🔥 Aquí actualizamos la UI y enviamos el cambio hacia afuera
-            checkCompletado.setOnCheckedChangeListener(null)  // Evitar eventos basura al reciclar
+
+            checkCompletado.setOnCheckedChangeListener(null)
             checkCompletado.isChecked = desafio.activo
             checkCompletado.setOnCheckedChangeListener { _, isChecked ->
                 desafio.activo = isChecked
-                desafio.cambiado = true  // 🔥 Marcamos que este desafío ha cambiado
+                desafio.cambiado = true
                 onCheckedChange?.invoke(desafio, isChecked)
             }
 

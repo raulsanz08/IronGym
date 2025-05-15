@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <!-- Nombre del remitente -->
+
         <TextView
             android:id="@+id/tvSender"
             android:layout_width="wrap_content"
@@ -23,7 +23,7 @@
             android:textSize="14sp"
             android:textStyle="bold"/>
 
-        <!-- Mensaje -->
+
         <TextView
             android:id="@+id/tvMessage"
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp"/>
 
-        <!-- Hora -->
+
         <TextView
             android:id="@+id/tvTime"
             android:layout_width="wrap_content"

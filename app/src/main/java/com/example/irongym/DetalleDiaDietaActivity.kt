@@ -37,7 +37,7 @@ class DetalleDiaDietaActivity : AppCompatActivity() {
         val titulo = intent.getStringExtra("DIA_DIETA_NOMBRE") ?: "Día de dieta"
         val imagenUrl = intent.getStringExtra("IMAGEN_URL") ?: ""
 
-        // 📋 LOG para depuración
+
         Log.d("DetalleDiaDieta", "ID recibido: $diaId")
 
         tvTitulo.text = titulo

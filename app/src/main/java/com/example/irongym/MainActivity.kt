@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
@@ -34,22 +34,22 @@ class MainActivity : AppCompatActivity() {
 
         RetrofitInstance.initialize(this)
 
-        // Configurar RecyclerViews
+
         binding.rvRutinas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.rvDietas.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
-        // Asignar adapters vacíos inicialmente para evitar el warning
+
         rutinaAdapter = RutinaAdapter(emptyList())
         dietaAdapter = DietaAdapter(emptyList())
         binding.rvRutinas.adapter = rutinaAdapter
         binding.rvDietas.adapter = dietaAdapter
 
-        // Cargar datos desde la API
+
         obtenerRutinas()
         obtenerDietas()
 
-        // Botón logout
-        val btnLogout = findViewById<Button>(R.id.btnLogout)
+
+        val btnLogout = findViewById<ImageButton>(R.id.btnLogout)
         btnLogout.setOnClickListener {
             logout()
         }
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             rutinaAdapter.filter(query)
             dietaAdapter.filter(query)
 
-            // 🔥 Ahora comprobamos si hay o no resultados
+
             val hayRutinas = rutinaAdapter.itemCount > 0
             val hayDietas = dietaAdapter.itemCount > 0
 
@@ -99,23 +99,23 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_perfil -> {
                     startActivity(Intent(this, PerfilActivity::class.java))
-                    false
+                    true
                 }
                 R.id.nav_progreso -> {
                     startActivity(Intent(this, EstadisticasActivity::class.java))
-                    false
+                    true
                 }
                 R.id.nav_configuracion -> {
                     startActivity(Intent(this, ConfiguracionActivity::class.java))
-                    false
+                    true
                 }
                 R.id.nav_notificaciones -> {
                     startActivity(Intent(this, NotificacionesActivity::class.java))
-                    false
+                    true
                 }
                 R.id.nav_modo_desafio -> {
                     startActivity(Intent(this, ModoDesafioActivity::class.java))
-                    false
+                    true
                 }
                 else -> false
             }
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
                     val rutinas = response.body()!!.rutinas
                     Log.d("MainActivity", "Rutinas recibidas: ${rutinas.size}")
 
-                    // Actualizar el adapter
+
                     rutinaAdapter.updateData(rutinas)
                 } else {
                     Toast.makeText(this@MainActivity, "Error cargando rutinas", Toast.LENGTH_SHORT).show()
@@ -149,7 +149,7 @@ class MainActivity : AppCompatActivity() {
                     val dietas = response.body()!!.dietas
                     Log.d("MainActivity", "Dietas recibidas: ${dietas.size}")
 
-                    // Actualizar el adapter
+
                     dietaAdapter.updateData(dietas)
                 } else {
                     Toast.makeText(this@MainActivity, "Error cargando dietas", Toast.LENGTH_SHORT).show()

@@ -19,7 +19,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
-        <!-- ZXing Activity -->
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="fullSensor"
@@ -33,7 +32,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Tus demás activities... -->
         <activity android:name=".LoginActivity" android:exported="false" />
         <activity android:name=".MainActivity" android:exported="false" />
         <activity android:name=".DetalleRutinaActivity" android:exported="false" />

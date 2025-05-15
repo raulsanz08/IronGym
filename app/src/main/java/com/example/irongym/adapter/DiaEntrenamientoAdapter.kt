@@ -17,7 +17,7 @@ class DiaEntrenamientoAdapter(
     private val dias: List<DiaEntrenamiento>
 ) : RecyclerView.Adapter<DiaEntrenamientoAdapter.DiaViewHolder>() {
 
-    // Mapa temporal para almacenar los estados de los checkbox
+
     private val estadosCheckBox = mutableMapOf<Int, Boolean>()
 
     inner class DiaViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,15 +42,15 @@ class DiaEntrenamientoAdapter(
             .load(dia.imagenUrl)
             .into(holder.ivDia)
 
-        // Asignar estado actual del checkbox
+
         holder.checkCompletado.isChecked = estadosCheckBox[dia.id] ?: false
 
-        // Actualizar el estado cuando se marque o desmarque
+
         holder.checkCompletado.setOnCheckedChangeListener { _, isChecked ->
             estadosCheckBox[dia.id] = isChecked
         }
 
-        // Clic en el item para abrir detalle
+
         holder.itemView.setOnClickListener {
             val context = holder.itemView.context
             val intent = Intent(context, DetalleEjercicioActivity::class.java)
@@ -63,12 +63,12 @@ class DiaEntrenamientoAdapter(
 
     override fun getItemCount(): Int = dias.size
 
-    // Exponer los estados para que DetalleRutinaActivity pueda guardarlos
+
     fun obtenerEstadosCheckBox(): Map<Int, Boolean> {
         return estadosCheckBox
     }
 
-    // Método para cargar los estados guardados
+
     fun cargarEstadosGuardados(estados: Map<Int, Boolean>) {
         estadosCheckBox.clear()
         estadosCheckBox.putAll(estados)

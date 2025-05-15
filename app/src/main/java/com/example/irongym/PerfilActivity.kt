@@ -30,7 +30,6 @@ class PerfilActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_usuario)
 
-        // Inicializar vistas
         tvNombreUsuario = findViewById(R.id.tvNombreUsuario)
         tvPesoUsuario = findViewById(R.id.tvPesoUsuario)
         tvAlturaUsuario = findViewById(R.id.tvAlturaUsuario)
@@ -41,7 +40,6 @@ class PerfilActivity : AppCompatActivity() {
         ivAvatar = findViewById(R.id.ivAvatar)
         ivFondoPerfil = findViewById(R.id.ivFondoPerfil)
 
-        // Obtener el token
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         token = sharedPreferences.getString("TOKEN", null) ?: ""
 
@@ -49,13 +47,11 @@ class PerfilActivity : AppCompatActivity() {
 
         btnActualizar.setOnClickListener { guardarDatosPerfil() }
 
-        // Cargar imagen de fondo
         Glide.with(this)
             .load("https://hips.hearstapps.com/hmg-prod/images/mamdouh-big-ramy-elssbiay-competes-in-the-arnold-classic-as-news-photo-1628075584.jpg?crop=1xw:0.66676xh;center,top&resize=640:*")
             .placeholder(R.drawable.ic_launcher_background)
             .into(ivFondoPerfil)
 
-        // Cargar imagen de avatar
         Glide.with(this)
             .load("https://hips.hearstapps.com/hmg-prod/images/captura-de-pantalla-2024-06-10-a-las-10-12-46-6666b588c5fd4.jpg?crop=1.00xw:0.620xh;0,0.00803xh&resize=1200:*")
             .circleCrop()
@@ -116,7 +112,6 @@ class PerfilActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         Toast.makeText(this@PerfilActivity, "Perfil actualizado correctamente", Toast.LENGTH_SHORT).show()
 
-                        // 🔥 ACTUALIZAMOS LAS VISTAS
                         tvNombreUsuario.text = nombre
                         tvPesoUsuario.text = "Peso: $peso kg"
                         tvAlturaUsuario.text = "Altura: $altura cm"

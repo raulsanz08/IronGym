@@ -72,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
     private fun saveToken(token: String, userId: Int) {
         val sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
         with(sharedPreferences.edit()) {
-            putString("token", token)  // 🔥 Cambiado a minúscula aquí
+            putString("token", token)
             putInt("usuario_id", userId)
             apply()
         }

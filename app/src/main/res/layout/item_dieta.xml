@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- Imagen de la dieta -->
+
         <ImageView
             android:id="@+id/ivDieta"
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tvDietaTitulo" />
 
-        <!-- Título de la dieta -->
+
         <TextView
             android:id="@+id/tvDietaTitulo"
             android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Descripción de la dieta -->
+
         <TextView
             android:id="@+id/tvDietaDescripcion"
             android:layout_width="match_parent"

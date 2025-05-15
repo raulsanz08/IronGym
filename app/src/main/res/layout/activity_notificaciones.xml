@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".NotificacionesActivity">
 
-    <!-- 🔴 Barra superior roja -->
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Título centrado de la pantalla -->
+
         <TextView
             android:id="@+id/tvTituloNotificaciones"
             android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
             android:layout_marginTop="16dp" />
     </androidx.appcompat.widget.Toolbar>
 
-    <!-- Botón de retroceso -->
+
     <ImageButton
         android:id="@+id/btnReturn"
         android:layout_width="50dp"
@@ -43,7 +43,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Título de las notificaciones -->
+
     <TextView
         android:id="@+id/tvNotificaciones"
         android:layout_width="wrap_content"
@@ -57,7 +57,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp" />
 
-    <!-- Contenedor blanco con los días -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardDias"
         android:layout_width="0dp"
@@ -80,7 +80,7 @@
             tools:listitem="@layout/item_notificacion" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Botón Guardar datos -->
+
     <Button
         android:id="@+id/btnGuardar"
         android:layout_width="0dp"

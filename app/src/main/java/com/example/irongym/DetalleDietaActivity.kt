@@ -32,7 +32,7 @@ class DetalleDietaActivity : AppCompatActivity() {
         if (intentResult != null && intentResult.contents != null) {
             val rawData = intentResult.contents
 
-            // Intentar parsear como JSON primero
+
             try {
                 val json = JSONObject(rawData)
                 val nombre = json.getString("nombre")
