@@ -3,10 +3,10 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="red_oscuro">#EF2121</color>
-    <color name="red_claro">#F06D6D</color>
+    <color name="red_oscuro">#F07373</color>
+    <color name="red_claro">#D9A8A8</color>
 
-    <color name="red_masclaro">#DCA7A7</color>
+    <color name="red_masclaro">#D1B1B1</color>
 
     <color name="red_error">#B00020</color>
 </resources>

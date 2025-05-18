@@ -10,7 +10,7 @@ import retrofit2.http.POST
 interface ApiServiceGroq {
     @Headers(
         "Content-Type: application/json",
-        "Authorization: Bearer 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"
+        "Authorization: Bearer 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"
     )
     @POST("v1/chat/completions")
     fun sendChatMessage(@Body body: OpenAiRequest): Call<OpenAiResponse>
