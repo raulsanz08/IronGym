@@ -41,7 +41,7 @@ class PerfilActivity : AppCompatActivity() {
         ivFondoPerfil = findViewById(R.id.ivFondoPerfil)
 
         sharedPreferences = getSharedPreferences("MyPrefs", MODE_PRIVATE)
-        token = sharedPreferences.getString("TOKEN", null) ?: ""
+        token = sharedPreferences.getString("token", null) ?: ""
 
         cargarDatosPerfil()
 
