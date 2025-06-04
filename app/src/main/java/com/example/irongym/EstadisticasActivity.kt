@@ -100,7 +100,7 @@ class EstadisticasActivity : AppCompatActivity() {
     }
 
     private fun actualizarVista(estadisticas: EstadisticasResponse) {
-        val bpm = estadisticas.ritmoCardiaco.coerceAtLeast(1)
+        val bpm = estadisticas.ritmoCardiaco.coerceAtLeast(80)
         tvRitmoCardiaco.text = "$bpm bpm"
 
         val fuerza = estadisticas.fuerza.coerceIn(0, 100)
@@ -134,6 +134,11 @@ class EstadisticasActivity : AppCompatActivity() {
             barra.layoutParams = layoutParams
         }
         animator.start()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        cargarEstadisticas()
     }
 
 }
