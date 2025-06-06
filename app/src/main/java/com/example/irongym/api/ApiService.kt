@@ -64,16 +64,16 @@ interface ApiService {
     fun obtenerEstadisticas(@Header("Authorization") token: String): Call<EstadisticasResponse>
 
     @GET("/api/notificaciones/")
-    fun obtenerNotificaciones(): Call<NotificacionesResponse>
+    fun obtenerNotificaciones(@Header("Authorization") token: String): Call<NotificacionesResponse>
 
     @PUT("/api/notificaciones/{id}/update/")
     fun actualizarNotificacion(@Path("id") id: Int, @Body body: NotificacionUpdateResponse): Call<Map<String, Any>>
 
     @GET("/api/desafios/")
-    fun obtenerDesafios(): Call<DesafioResponse>
+    fun obtenerDesafios(@Header("Authorization") token: String): Call<DesafioResponse>
 
     @PUT("/api/desafios/{id}/")
-    fun actualizarDesafio(@Path("id") id: Int, @Body body: Map<String, Boolean>): Call<Map<String, Any>>
+    fun actualizarDesafio(@Path("id") id: Int, @Header("Authorization") token: String, @Body body: Map<String, Any>): Call<Map<String, Any>>
 
     @POST("/api/configuracion/")
     fun actualizarConfiguracion(@Header("Authorization") token: String, @Body configuracion: ConfiguracionRequest): Call<Void>

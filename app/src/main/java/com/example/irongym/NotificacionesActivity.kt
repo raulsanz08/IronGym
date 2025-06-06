@@ -75,7 +75,7 @@ class NotificacionesActivity : AppCompatActivity() {
     }
 
     private fun obtenerNotificaciones() {
-        apiService.obtenerNotificaciones().enqueue(object : Callback<NotificacionesResponse> {
+        apiService.obtenerNotificaciones("Token $token").enqueue(object : Callback<NotificacionesResponse> {
             override fun onResponse(
                 call: Call<NotificacionesResponse>,
                 response: Response<NotificacionesResponse>
