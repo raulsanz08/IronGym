@@ -73,7 +73,7 @@ interface ApiService {
     fun obtenerDesafios(@Header("Authorization") token: String): Call<DesafioResponse>
 
     @PUT("/api/desafios/{id}/")
-    fun actualizarDesafio(@Path("id") id: Int, @Header("Authorization") token: String, @Body body: Map<String, Any>): Call<Map<String, Any>>
+    fun actualizarDesafio(@Path("id") id: Int, @Header("Authorization") token: String, @Body body: Map<String, Boolean>): Call<Map<String, Any>>
 
     @POST("/api/configuracion/")
     fun actualizarConfiguracion(@Header("Authorization") token: String, @Body configuracion: ConfiguracionRequest): Call<Void>
